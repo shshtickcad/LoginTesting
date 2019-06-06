@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using DevExpress.UserSkins;
+using logInTesting.Forms;
+using System;
 using System.Windows.Forms;
-using DevExpress.UserSkins;
-using DevExpress.Skins;
-using DevExpress.LookAndFeel;
 
 namespace logInTesting
 {
@@ -20,7 +17,7 @@ namespace logInTesting
             Application.SetCompatibleTextRenderingDefault(false);
 
             BonusSkins.Register();
-            Application.Run(new Form1());
+            Application.Run(new Form_login());
         }
     }
 }
