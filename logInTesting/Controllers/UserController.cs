@@ -28,7 +28,14 @@ namespace logInTesting.Controllers
 
             HttpResponseMessage response = await _client.PostAsync("api/user/", byteContent);
 
-            XtraMessageBox.Show(user.FirstName + " registered successfully!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (response.IsSuccessStatusCode)
+            {
+                XtraMessageBox.Show(user.FirstName + " registered successfully!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                XtraMessageBox.Show("Server failed!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             return new User();
         }
 

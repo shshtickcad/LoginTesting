@@ -77,7 +77,6 @@ namespace logInTesting.Forms
                 Role = comboBoxEdit1.Text
             };
             await _userCtr.AddUser(usr);
-
             resetFields();
         }
 
