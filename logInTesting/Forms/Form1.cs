@@ -39,5 +39,13 @@ namespace logInTesting.Forms
             Form_delete fd = new Form_delete();
             fd.ShowDialog();
         }
+
+        private void simpleButtonLogOut_Click(object sender, System.EventArgs e)
+        {
+            this.Close();
+            this.Hide();
+            Form_login fl = new Form_login();
+            fl.ShowDialog();
+        }
     }
 }

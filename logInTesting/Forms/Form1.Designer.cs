@@ -35,11 +35,12 @@
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem_delete = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem_Edit = new DevExpress.XtraBars.BarButtonItem();
             this.PGSettings = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.addUser_ribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpgSkins = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.log_labl = new DevExpress.XtraEditors.LabelControl();
-            this.barButtonItem_Edit = new DevExpress.XtraBars.BarButtonItem();
+            this.simpleButtonLogOut = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
@@ -105,6 +106,14 @@
             this.barButtonItem_delete.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem_delete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem_delete_ItemClick);
             // 
+            // barButtonItem_Edit
+            // 
+            this.barButtonItem_Edit.Caption = "Edit";
+            this.barButtonItem_Edit.Id = 5;
+            this.barButtonItem_Edit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem_Edit.ImageOptions.Image")));
+            this.barButtonItem_Edit.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem_Edit.ImageOptions.LargeImage")));
+            this.barButtonItem_Edit.Name = "barButtonItem_Edit";
+            // 
             // PGSettings
             // 
             this.PGSettings.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -135,13 +144,14 @@
             this.log_labl.TabIndex = 2;
             this.log_labl.Text = "L";
             // 
-            // barButtonItem_Edit
+            // simpleButtonLogOut
             // 
-            this.barButtonItem_Edit.Caption = "Edit";
-            this.barButtonItem_Edit.Id = 5;
-            this.barButtonItem_Edit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem_Edit.ImageOptions.Image")));
-            this.barButtonItem_Edit.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem_Edit.ImageOptions.LargeImage")));
-            this.barButtonItem_Edit.Name = "barButtonItem_Edit";
+            this.simpleButtonLogOut.Location = new System.Drawing.Point(797, 31);
+            this.simpleButtonLogOut.Name = "simpleButtonLogOut";
+            this.simpleButtonLogOut.Size = new System.Drawing.Size(54, 23);
+            this.simpleButtonLogOut.TabIndex = 4;
+            this.simpleButtonLogOut.Text = "LogOut";
+            this.simpleButtonLogOut.Click += new System.EventHandler(this.simpleButtonLogOut_Click);
             // 
             // Form1
             // 
@@ -149,6 +159,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(902, 489);
+            this.Controls.Add(this.simpleButtonLogOut);
             this.Controls.Add(this.log_labl);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.ribbonControl1);
@@ -178,5 +189,6 @@
         private DevExpress.XtraEditors.LabelControl log_labl;
         private DevExpress.XtraBars.BarButtonItem barButtonItem_delete;
         private DevExpress.XtraBars.BarButtonItem barButtonItem_Edit;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonLogOut;
     }
 }
