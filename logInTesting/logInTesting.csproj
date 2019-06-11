@@ -251,6 +251,12 @@
     <Compile Include="Forms\Form_delete.Designer.cs">
       <DependentUpon>Form_delete.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Form_edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form_edit.Designer.cs">
+      <DependentUpon>Form_edit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Form_login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -270,6 +276,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_delete.resx">
       <DependentUpon>Form_delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form_edit.resx">
+      <DependentUpon>Form_edit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form_login.resx">
       <DependentUpon>Form_login.cs</DependentUpon>

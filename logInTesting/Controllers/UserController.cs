@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -105,6 +106,23 @@ namespace logInTesting.Controllers
                 string result = JsonConvert.DeserializeObject<string>(json);
                 return result;
             }
+        }
+
+        internal async Task<List<User>> getUsers()
+        {
+            HttpResponseMessage response = await _client.GetAsync("api/user/");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+                List<User> result = JsonConvert.DeserializeObject<List<User>>(json);
+                return result;
+            }
+            else
+            {
+                XtraMessageBox.Show("Server failed couldn't get users!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return new List<User>();
         }
     }
 }

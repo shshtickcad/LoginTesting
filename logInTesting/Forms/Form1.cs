@@ -12,6 +12,7 @@ namespace logInTesting.Forms
             if (Properties.Settings.Default.UserName != "admin")
             {
                 barButtonItem_delete.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                barButtonItem_Edit.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                 //comboBoxEdit1.Visible = false;
             }
         }
@@ -46,6 +47,12 @@ namespace logInTesting.Forms
             this.Hide();
             Form_login fl = new Form_login();
             fl.ShowDialog();
+        }
+
+        private void barButtonItem_Edit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form_edit fe = new Form_edit();
+            fe.ShowDialog();
         }
     }
 }

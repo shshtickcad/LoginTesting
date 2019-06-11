@@ -113,6 +113,7 @@
             this.barButtonItem_Edit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem_Edit.ImageOptions.Image")));
             this.barButtonItem_Edit.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem_Edit.ImageOptions.LargeImage")));
             this.barButtonItem_Edit.Name = "barButtonItem_Edit";
+            this.barButtonItem_Edit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem_Edit_ItemClick);
             // 
             // PGSettings
             // 
