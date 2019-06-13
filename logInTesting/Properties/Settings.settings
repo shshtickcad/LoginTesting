@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="ServerAddress" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://localhost:6600/</Value>
+      <Value Profile="(Default)">http://localhost:7700/</Value>
     </Setting>
     <Setting Name="UserName" Type="System.String" Scope="User">
       <Value Profile="(Default)" />

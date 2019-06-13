@@ -69,6 +69,7 @@
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.labelWelcome);
             this.Name = "Form_edit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form_edit";
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();

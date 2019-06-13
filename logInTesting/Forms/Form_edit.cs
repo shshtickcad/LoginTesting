@@ -19,11 +19,5 @@ namespace logInTesting.Forms
             var ds = await _userCtr.getUsers();
             gridControl1.DataSource = ds;
         }
-
-        //public async void Form_edit_Load(object sender, EventArgs e)
-        //{
-        //   var ds = await _userCtr.getUsers();
-        //    gridControl1.DataSource = ds;
-        //}
     }
 }

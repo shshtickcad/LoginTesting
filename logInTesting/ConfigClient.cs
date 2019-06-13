@@ -11,6 +11,7 @@ namespace logInTesting
         public static void InitializeClient()
         {
             _client = new HttpClient();
+            //Properties.Settings.Default.Reset();
             _client.BaseAddress = new Uri(Properties.Settings.Default.ServerAddress);
             _client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             //_client.Timeout = new TimeSpan(0, 50, 0);

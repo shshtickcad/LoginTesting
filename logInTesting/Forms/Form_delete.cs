@@ -19,6 +19,12 @@ namespace logInTesting.Forms
 
         private async void buttonDelete_ClickAsync(object sender, EventArgs e)
         {
+            if (textUsername.Text == "")
+            {
+                XtraMessageBox.Show("User name field must not be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
            await _userCtr.DeleteUser(textUsername.Text);
 
             resetFields();
@@ -26,7 +32,6 @@ namespace logInTesting.Forms
         private void resetFields()
         {
             textUsername.Text = "";
-            //textEmail.Text = "";
         }
     }
 }

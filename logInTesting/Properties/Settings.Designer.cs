@@ -25,7 +25,7 @@ namespace logInTesting.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://localhost:6600/")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:7700/")]
         public string ServerAddress {
             get {
                 return ((string)(this["ServerAddress"]));

@@ -91,22 +91,22 @@ namespace logInTesting.Controllers
         }
 
 
-        internal async Task<string> loggedAs()
-        {
-            HttpResponseMessage respond = _client.GetAsync("api/loggedAs").Result;
+        //internal async Task<string> loggedAs()
+        //{
+        //    HttpResponseMessage respond = _client.GetAsync("api/loggedAs").Result;
 
-            if (!respond.IsSuccessStatusCode)
-            {
-                XtraMessageBox.Show("Server failed to give a successfull response.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return string.Empty;
-            }
-            else
-            {
-                var json = await respond.Content.ReadAsStringAsync();
-                string result = JsonConvert.DeserializeObject<string>(json);
-                return result;
-            }
-        }
+        //    if (!respond.IsSuccessStatusCode)
+        //    {
+        //        XtraMessageBox.Show("Server failed to give a successfull response.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        return string.Empty;
+        //    }
+        //    else
+        //    {
+        //        var json = await respond.Content.ReadAsStringAsync();
+        //        string result = JsonConvert.DeserializeObject<string>(json);
+        //        return result;
+        //    }
+        //}
 
         internal async Task<List<User>> getUsers()
         {
