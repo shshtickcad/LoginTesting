@@ -65,12 +65,12 @@ namespace logInTesting.Forms
             Close();
         }
 
-        public static bool IsActive()
-        {
-            Form_login login = new Form_login();
-            login.ShowDialog();
-            return login.IsDone ? true : false;
-        }
+        //public static bool IsActive()
+        //{
+        //    Form_login login = new Form_login();
+        //    login.ShowDialog();
+        //    return login.IsDone ? true : false;
+        //}
 
         private void cancelB_Click(object sender, EventArgs e)
         {
