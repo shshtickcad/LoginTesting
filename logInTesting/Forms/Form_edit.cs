@@ -1,6 +1,8 @@
 ﻿using DevExpress.XtraEditors;
 using logInTesting.Controllers;
 using System;
+using System.Collections.Generic;
+using TickToolCloud.Entities.Entity;
 
 namespace logInTesting.Forms
 {
@@ -14,10 +16,53 @@ namespace logInTesting.Forms
             InitializeComponent();
         }
 
-        private async void gridControl1_Load(object sender, EventArgs e)
+        private async void Form_edit_Load(object sender, EventArgs e)
         {
-            var ds = await _userCtr.getUsers();
-            gridControl1.DataSource = ds;
+             //await _userCtr.getUserNames();
+
+            lookUpEdit.Properties.DataSource = await _userCtr.getUsers();
+
+            lookUpEdit.Properties.DisplayMember = "UserName";
+
+            lookUpEdit.Properties.ValueMember = "id";
+
+            DevExpress.XtraEditors.Controls.LookUpColumnInfo col;
+
+            col = new DevExpress.XtraEditors.Controls.LookUpColumnInfo("UserName", "User Name", 100);
+
+            col.SortOrder = DevExpress.Data.ColumnSortOrder.Ascending;
+
+            lookUpEdit.Properties.Columns.Add(col);
+
+             //= usrname;
         }
+
+        private void lookUpEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            User usr =  (User)lookUpEdit.GetSelectedDataRow();
+            email_text.Text = usr.Email;
+            fname_text.Text = usr.FirstName;
+            lname_textfield.Text = usr.LastName;
+            company_text.Text = usr.Company;
+            comboBoxEdit2.Text = usr.Role;
+        }
+
+        private async void save_simpleButton_Click(object sender, EventArgs e)
+        {
+            User usr = (User)lookUpEdit.GetSelectedDataRow();
+
+            User user = new User
+            {
+                UserName = lookUpEdit.Text,
+                Email = email_text.Text,
+                FirstName = fname_text.Text,
+                LastName = lname_textfield.Text,
+                Password = usr.Password,
+                Company = company_text.Text,
+                Role = comboBoxEdit2.Text
+            };
+            await _userCtr.EditUser(usr.id, user);
+        }
+
     }
 }

@@ -139,7 +139,8 @@
             // 
             // log_labl
             // 
-            this.log_labl.Location = new System.Drawing.Point(867, 36);
+            this.log_labl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.log_labl.Location = new System.Drawing.Point(857, 36);
             this.log_labl.Name = "log_labl";
             this.log_labl.Size = new System.Drawing.Size(5, 13);
             this.log_labl.TabIndex = 2;
@@ -147,6 +148,7 @@
             // 
             // simpleButtonLogOut
             // 
+            this.simpleButtonLogOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButtonLogOut.Location = new System.Drawing.Point(797, 31);
             this.simpleButtonLogOut.Name = "simpleButtonLogOut";
             this.simpleButtonLogOut.Size = new System.Drawing.Size(54, 23);

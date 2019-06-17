@@ -90,6 +90,43 @@ namespace logInTesting.Controllers
             return true;
         }
 
+        internal async Task<List<User>> getUsers()
+        {
+            HttpResponseMessage response = await _client.GetAsync("api/user/");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var json = await response.Content.ReadAsStringAsync();
+                List<User> result = JsonConvert.DeserializeObject<List<User>>(json);
+                return result;
+            }
+            else
+            {
+                XtraMessageBox.Show("Server failed couldn't get users!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return new List<User>();
+        }
+
+        internal async Task<User> EditUser(int id, User user)
+        {
+            string httpContent = JsonConvert.SerializeObject(user);
+            byte[] buffer = Encoding.UTF8.GetBytes(httpContent);
+
+            ByteArrayContent byteContent = new ByteArrayContent(buffer);
+            byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+            HttpResponseMessage response = await _client.PutAsync("api/user/editUser/" + id , byteContent);
+
+            if (response.IsSuccessStatusCode)
+            {
+                XtraMessageBox.Show(user.FirstName + " edited successfully!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                XtraMessageBox.Show("Server failed!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return new User();
+        }
 
         //internal async Task<string> loggedAs()
         //{
@@ -108,21 +145,22 @@ namespace logInTesting.Controllers
         //    }
         //}
 
-        internal async Task<List<User>> getUsers()
-        {
-            HttpResponseMessage response = await _client.GetAsync("api/user/");
 
-            if (response.IsSuccessStatusCode)
-            {
-                var json = await response.Content.ReadAsStringAsync();
-                List<User> result = JsonConvert.DeserializeObject<List<User>>(json);
-                return result;
-            }
-            else
-            {
-                XtraMessageBox.Show("Server failed couldn't get users!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return new List<User>();
-        }
+        //internal async Task<List<string>> getUserNames()
+        //{
+        //    HttpResponseMessage response = await _client.GetAsync("api/user/usernames");
+
+        //    if (response.IsSuccessStatusCode)
+        //    {
+        //        var json = await response.Content.ReadAsStringAsync();
+        //        List<string> result = JsonConvert.DeserializeObject<List<string>>(json);
+        //        return result;
+        //    }
+        //    else
+        //    {
+        //        XtraMessageBox.Show("Server failed couldn't get users!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //    return new List<string>();
+        //}
     }
 }
