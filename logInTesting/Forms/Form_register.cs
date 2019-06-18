@@ -57,14 +57,13 @@ namespace logInTesting.Forms
             #endregion
 
             #region CHECK IF EMAIL ALREADY EXISTS
-            var result = await _userCtr.checkEmail(email_text.Text);
+            var result = await _userCtr.CheckEmail(email_text.Text);
             if (result != true)
             {
                 XtraMessageBox.Show("User with same E-mail already exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             #endregion
-
 
             User usr = new User
             {
@@ -77,10 +76,10 @@ namespace logInTesting.Forms
                 Role = comboBoxEdit1.Text
             };
             await _userCtr.AddUser(usr);
-            resetFields();
+            ResetFields();
         }
 
-        private void resetFields()
+        private void ResetFields()
         {
             fname_text.Text = "";
             lname_textfield.Text = "";

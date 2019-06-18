@@ -33,7 +33,12 @@ namespace logInTesting.Forms
                 password = password_textEdit.Text
             };
 
-            var result = await _userCtr.checkUsers(login);
+            var result = await _userCtr.CheckUsers(login);
+
+            if (result == true)
+            {
+                Form1.loggedUser = userName_textEdit.Text;
+            }
 
             IsDone = result ? true : false;
 
@@ -72,15 +77,15 @@ namespace logInTesting.Forms
         //    return login.IsDone ? true : false;
         //}
 
-        private void cancelB_Click(object sender, EventArgs e)
-        {
-            IsDone = false;
-            Close();
-        }      
-
         private void Form_login_Load(object sender, EventArgs e)
         {
             userName_textEdit.Text = Properties.Settings.Default.UserName;
+        }
+
+        private void CancelB_Click(object sender, EventArgs e)
+        {
+            IsDone = false;
+            Close();
         }
     }
 }

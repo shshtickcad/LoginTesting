@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Controls;
 using logInTesting.Controllers;
 using System;
 using System.Collections.Generic;
@@ -18,23 +19,19 @@ namespace logInTesting.Forms
 
         private async void Form_edit_Load(object sender, EventArgs e)
         {
-             //await _userCtr.getUserNames();
-
-            lookUpEdit.Properties.DataSource = await _userCtr.getUsers();
+            lookUpEdit.Properties.DataSource = await _userCtr.GetUsers();
 
             lookUpEdit.Properties.DisplayMember = "UserName";
 
             lookUpEdit.Properties.ValueMember = "id";
 
-            DevExpress.XtraEditors.Controls.LookUpColumnInfo col;
+            LookUpColumnInfo col;
 
-            col = new DevExpress.XtraEditors.Controls.LookUpColumnInfo("UserName", "User Name", 100);
+            col = new LookUpColumnInfo("UserName", "User Name", 100);
 
             col.SortOrder = DevExpress.Data.ColumnSortOrder.Ascending;
 
             lookUpEdit.Properties.Columns.Add(col);
-
-             //= usrname;
         }
 
         private void lookUpEdit_EditValueChanged(object sender, EventArgs e)

@@ -1,34 +1,45 @@
 ﻿using DevExpress.XtraBars.Ribbon;
+using logInTesting.Controllers;
 
 namespace logInTesting.Forms
 {
     public partial class Form1 : RibbonForm
     {
+        private readonly UserController _userCtr;
+
+        public static string loggedUser;
+
+        private async void Form1_Shown(object sender, System.EventArgs e)
+        {
+            string user = await _userCtr.GetLoggedUser(loggedUser);
+
+
+            barButtonItem_delete.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            barButtonItem_Edit.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            view_barButtonItem.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+
+            if (user == "Admin")
+            {
+                barButtonItem_delete.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                barButtonItem_Edit.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                view_barButtonItem.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                //comboBoxEdit1.Visible = false;
+            }
+            else if (user == "Employee")
+            {
+                view_barButtonItem.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                barButtonItem_Edit.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            }
+        }
+
         public Form1()
         {
             //ConfigClient.InitializeClient();
             InitializeComponent();
+            _userCtr = new UserController(ConfigClient._client);
 
-            if (Properties.Settings.Default.UserName != "admin")
-            {
-                barButtonItem_delete.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                barButtonItem_Edit.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                view_barButtonItem.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-                //comboBoxEdit1.Visible = false;
-            }
         }
 
-        private void Form1_Shown(object sender, System.EventArgs e)
-        {
-            //if (!Form_login.IsActive())
-            //{
-            //    Application.Exit();
-            //}
-            //else
-            //{
-                log_labl.Text = Properties.Settings.Default.UserName;
-            //}
-        }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

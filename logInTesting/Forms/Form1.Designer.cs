@@ -40,8 +40,8 @@
             this.PGSettings = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.addUser_ribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpgSkins = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.log_labl = new DevExpress.XtraEditors.LabelControl();
             this.simpleButtonLogOut = new DevExpress.XtraEditors.SimpleButton();
+            this.log_labl = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
@@ -151,15 +151,6 @@
             this.rpgSkins.Name = "rpgSkins";
             this.rpgSkins.Text = "Skins";
             // 
-            // log_labl
-            // 
-            this.log_labl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.log_labl.Location = new System.Drawing.Point(857, 36);
-            this.log_labl.Name = "log_labl";
-            this.log_labl.Size = new System.Drawing.Size(5, 13);
-            this.log_labl.TabIndex = 2;
-            this.log_labl.Text = "L";
-            // 
             // simpleButtonLogOut
             // 
             this.simpleButtonLogOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -169,6 +160,15 @@
             this.simpleButtonLogOut.TabIndex = 4;
             this.simpleButtonLogOut.Text = "LogOut";
             this.simpleButtonLogOut.Click += new System.EventHandler(this.simpleButtonLogOut_Click);
+            // 
+            // log_labl
+            // 
+            this.log_labl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.log_labl.Location = new System.Drawing.Point(857, 36);
+            this.log_labl.Name = "log_labl";
+            this.log_labl.Size = new System.Drawing.Size(5, 13);
+            this.log_labl.TabIndex = 2;
+            this.log_labl.Text = "L";
             // 
             // Form1
             // 
@@ -203,10 +203,10 @@
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup addUser_ribbonPageGroup;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraEditors.LabelControl log_labl;
         private DevExpress.XtraBars.BarButtonItem barButtonItem_delete;
         private DevExpress.XtraBars.BarButtonItem barButtonItem_Edit;
         private DevExpress.XtraEditors.SimpleButton simpleButtonLogOut;
         private DevExpress.XtraBars.BarButtonItem view_barButtonItem;
+        private DevExpress.XtraEditors.LabelControl log_labl;
     }
 }

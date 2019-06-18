@@ -99,7 +99,7 @@
             this.cancelB.Size = new System.Drawing.Size(81, 24);
             this.cancelB.TabIndex = 4;
             this.cancelB.Text = "Cancel";
-            this.cancelB.Click += new System.EventHandler(this.cancelB_Click);
+            this.cancelB.Click += new System.EventHandler(this.CancelB_Click);
             // 
             // Form_login
             // 
