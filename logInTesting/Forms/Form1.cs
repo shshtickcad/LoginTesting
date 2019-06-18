@@ -13,6 +13,7 @@ namespace logInTesting.Forms
             {
                 barButtonItem_delete.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                 barButtonItem_Edit.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                view_barButtonItem.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                 //comboBoxEdit1.Visible = false;
             }
         }
@@ -53,6 +54,12 @@ namespace logInTesting.Forms
         {
             Form_edit fe = new Form_edit();
             fe.ShowDialog();
+        }
+
+        private void view_barButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form_view fv = new Form_view();
+            fv.Show();
         }
     }
 }

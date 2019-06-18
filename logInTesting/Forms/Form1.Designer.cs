@@ -36,6 +36,7 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem_delete = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem_Edit = new DevExpress.XtraBars.BarButtonItem();
+            this.view_barButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.PGSettings = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.addUser_ribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpgSkins = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -70,9 +71,10 @@
             this.skinRibbonGalleryBarItem1,
             this.barButtonItem1,
             this.barButtonItem_delete,
-            this.barButtonItem_Edit});
+            this.barButtonItem_Edit,
+            this.view_barButtonItem});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 6;
+            this.ribbonControl1.MaxItemId = 7;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.PGSettings});
@@ -115,19 +117,31 @@
             this.barButtonItem_Edit.Name = "barButtonItem_Edit";
             this.barButtonItem_Edit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem_Edit_ItemClick);
             // 
+            // view_barButtonItem
+            // 
+            this.view_barButtonItem.Caption = "View";
+            this.view_barButtonItem.Hint = "View all the users.";
+            this.view_barButtonItem.Id = 6;
+            this.view_barButtonItem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("view_barButtonItem.ImageOptions.Image")));
+            this.view_barButtonItem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("view_barButtonItem.ImageOptions.LargeImage")));
+            this.view_barButtonItem.Name = "view_barButtonItem";
+            this.view_barButtonItem.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.view_barButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.view_barButtonItem_ItemClick);
+            // 
             // PGSettings
             // 
             this.PGSettings.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.addUser_ribbonPageGroup,
             this.rpgSkins});
             this.PGSettings.Name = "PGSettings";
-            this.PGSettings.Text = "Settings";
+            this.PGSettings.Text = "Users";
             // 
             // addUser_ribbonPageGroup
             // 
             this.addUser_ribbonPageGroup.ItemLinks.Add(this.barButtonItem1);
             this.addUser_ribbonPageGroup.ItemLinks.Add(this.barButtonItem_Edit);
             this.addUser_ribbonPageGroup.ItemLinks.Add(this.barButtonItem_delete);
+            this.addUser_ribbonPageGroup.ItemLinks.Add(this.view_barButtonItem);
             this.addUser_ribbonPageGroup.Name = "addUser_ribbonPageGroup";
             this.addUser_ribbonPageGroup.Text = "Edit Users";
             // 
@@ -193,5 +207,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem_delete;
         private DevExpress.XtraBars.BarButtonItem barButtonItem_Edit;
         private DevExpress.XtraEditors.SimpleButton simpleButtonLogOut;
+        private DevExpress.XtraBars.BarButtonItem view_barButtonItem;
     }
 }
